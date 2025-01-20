@@ -1,8 +1,11 @@
+import Carousel from "@/components/Home/Carousel"; 
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <>
-      <h1>Home page</h1>
-    </>
+    <div>
+      <Carousel />
+    </div>
   );
-}
+};
+
+export default HomePage;
