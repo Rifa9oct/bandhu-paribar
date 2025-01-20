@@ -13,13 +13,13 @@ const Carousel = () => {
 
   const slides = [
     {
-      image: "/banner.png",
+      image: "/banner1.png",
     },
     {
-      image: "/banner2.jpg",
+      image: "/banner2.png",
     },
     {
-      image: "/banner3.jpg",
+      image: "/banner3.png",
     },
   ];
 
@@ -36,7 +36,7 @@ const Carousel = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative w-full h-[500px] bg-cover bg-center"
+              className="relative w-full h-[500px] bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="absolute inset-0 bg-[#009245] bg-opacity-20 flex flex-col justify-center items-start pl-[200px] text-center text-white">
