@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const About = () => {
     return (
-        <div className="w-full flex justify-center items-center relative mb-[120px] h-[600px] bg-[#006837]" >
+        <div className="w-full flex justify-center items-center relative h-[600px] bg-[#006837]" >
             <Image src="/about_top.png" width={1000} height={1000} alt="about" className="absolute right-0 top-0" />
-            <Image src="/about_bottom.png" width={850} height={850} alt="about" className="absolute left-0 bottom-0" />
+            <Image src="/about_bottom.png" width={720} height={720} alt="about" className="absolute left-0 bottom-0" />
 
             <div className="w-[960px] flex justify-between items-center z-10 text-white">
                 <div className="w-[520px]">

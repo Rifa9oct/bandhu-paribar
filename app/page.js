@@ -1,5 +1,6 @@
 import About from "@/components/Home/About";
 import Carousel from "@/components/Home/Carousel";
+import Countup from "@/components/Home/Countup";
 import JoinUs from "@/components/Home/JoinUs";
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
       <Carousel />
       <JoinUs />
       <About />
+      <Countup/>
     </div>
   );
 };
