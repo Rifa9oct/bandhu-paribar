@@ -24,7 +24,7 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="my-10 border-b-[20px] border-[#009245]">
+    <div className="mb-10 border-b-[20px] border-[#009245]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -39,12 +39,12 @@ const Carousel = () => {
               className="relative w-full h-[500px] bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="absolute inset-0 bg-[#009245] bg-opacity-20 flex flex-col justify-center items-start pl-[200px] text-center text-white">
+              <div className="absolute inset-0 bg-[#009245] bg-opacity-20 flex flex-col justify-center items-start pl-[210px] text-center text-white">
                 <h2 className="text-5xl font-bold font-serif">Join to become a Friend</h2>
                 <p className="text-lg mt-4">Be a friend and reach out for a smile on another friend&apos;s face.</p>
 
                 <Link href="#" className="relative mt-10">
-                  <button className="w-[200px] text-start bg-white text-[#009245] font-bold text-lg py-[8.5px] rounded-lg pl-3">Be a Friend!</button>
+                  <button className="w-[180px] text-start bg-white text-[#009245] font-bold text-lg py-[8.5px] rounded-lg pl-3">Be a Friend!</button>
 
                   <div className="absolute top-0 -right-1">
                     <Image src="/button.png" alt="My Icon" width={63} height={63} className="rounded-lg" />

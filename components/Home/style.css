@@ -5,6 +5,8 @@
     border-radius: 50%;
     width: 32px;
     height: 32px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .swiper-button-prev {
@@ -33,4 +35,11 @@
 
 .swiper-pagination-bullet-active {
     background-color: #009245;
+}
+
+
+#demo-customized-button{
+    background-color: #006837;
+    font-weight: 600;
+    text-transform: capitalize;
 }
