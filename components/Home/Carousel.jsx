@@ -24,7 +24,7 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="mb-10 border-b-[20px] border-[#009245]">
+    <div className="mb-16 border-b-[20px] border-[#009245]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
