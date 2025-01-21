@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Initiatives = () => {
     return (
@@ -17,10 +18,10 @@ const Initiatives = () => {
                     <Image src="/eid_bazar.png" width={150} height={150} alt="about" />
                 </div>
 
-                <div className="relative w-[300px] flex mx-auto mt-16">
+                <Link href="#" className="relative w-[300px] flex mx-auto mt-16">
                     <Image src="/be_a_friend_bar.png" width={300} height={300} alt="be_a_friend_bar" />
                     <p className="z-10 pl-8 pt-2 absolute top-0 text-3xl font-bold text-[#3db54a]">Be a Friend!</p>
-                </div>
+                </Link>
             </div>
         </div>
     );
