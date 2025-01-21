@@ -2,14 +2,13 @@ import Image from "next/image";
 
 const JoinUs = () => {
     return (
-        <div className="mb-[120px] text-[#006837]">
-            <div className="flex flex-col justify-center items-center mb-[100px]">
-                <h1 className="text-5xl font-bold font-serif uppercase">Join Us</h1>
+        <div className="mb-[80px] text-[#006837]">
+            <div className="flex flex-col justify-center items-center mb-[80px]">
+                <h1 className="text-5xl font-bold uppercase">Join Us</h1>
                 <p className="w-[100px] bg-[#006837] py-[3px] mt-2"></p>
             </div>
 
             <div className="w-[960px] mx-auto flex justify-center gap-[50px] items-center">
-
                 <div className="w-[285px] flex flex-col justify-center items-center text-center">
                     <div className="w-[80px] h-[80px]">
                         <Image src="/donation.png" width={250} height={250} alt="donation" />
@@ -37,7 +36,6 @@ const JoinUs = () => {
                     <p className="text-sm">Underyourleadership <br />BondhuPoribarwillhaveanauspiciousstart</p>
                 </div>
             </div>
-
         </div>
     );
 };

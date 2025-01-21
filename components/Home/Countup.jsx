@@ -9,7 +9,7 @@ const Countup = () => {
 
     return (
         <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)} >
-            <div className='border-t-[20px] mb-[120px] border-b-[20px] py-8 border-[#c2272d] w-full'>
+            <div className='border-t-[20px] border-b-[20px] py-8 border-[#c2272d] w-full'>
                 <div className='font-poppins flex flex-col md:flex-row items-center pb-10 lg:pb-0 gap-10 text-center w-[960px] mx-auto '>
                     <div className='lg:w-[300px]'>
                         {
