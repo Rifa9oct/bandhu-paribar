@@ -1,5 +1,5 @@
 
-const InterForm = () => {
+const BdFormOne = () => {
     return (
         <div className="bg-[#e9f5f0]">
             <h1 className="pb-16 text-4xl font-bold text-[#c1272d] text-center">( This form must be duly filled )</h1>
@@ -7,4 +7,4 @@ const InterForm = () => {
     );
 };
 
-export default InterForm;
+export default BdFormOne;
