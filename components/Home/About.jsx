@@ -9,7 +9,7 @@ const About = () => {
 
             <div className="w-[960px] flex justify-between items-center z-10 text-white">
                 <div className="w-[520px]">
-                    <Image src="/about.jpg" width={520} height={520} className="border-[4px] border-white rounded-2xl" />
+                    <Image src="/about.jpg" width={520} height={520} alt="about banner" className="border-[4px] border-white rounded-2xl" />
                 </div>
                 <div className="text-sm w-[350px]">
                     <h2 className="text-2xl font-bold">About Bondhu Poribar</h2>

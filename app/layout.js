@@ -1,6 +1,7 @@
 import Navbar from "@/components/Home/navbar/Navbar";
 import "./globals.css";
 import Header from "@/components/Home/Header";
+import Footer from "@/components/Home/footer/Footer";
 
 export const metadata = {
   title: "Bandhu Paribar",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <Header />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

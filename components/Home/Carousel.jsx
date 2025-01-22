@@ -24,7 +24,7 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="mb-16 border-b-[20px] border-[#009245]">
+    <div className="mb-16 border-b-[20px] border-[#006837]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -39,7 +39,7 @@ const Carousel = () => {
               className="relative w-full h-[500px] bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="absolute inset-0 bg-[#009245] bg-opacity-20 flex flex-col justify-center items-start pl-[210px] text-center text-white">
+              <div className="absolute inset-0 bg-[#006837] bg-opacity-35 flex flex-col justify-center items-start pl-[210px] text-center text-white">
                 <h2 className="text-5xl font-bold font-serif">Join to become a Friend</h2>
                 <p className="text-lg mt-4">Be a friend and reach out for a smile on another friend&apos;s face.</p>
 
