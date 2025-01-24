@@ -27,7 +27,7 @@ const InterFormOne = ({register, errors}) => {
             <div className="flex w-full gap-6 items-center mb-5">
 
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Date of Birth <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">Date of Birth <span className="text-red-500 font-bold">*</span></label>
                     <div className="flex gap-4 mt-2">
                         <select
                             name="day"
@@ -77,7 +77,7 @@ const InterFormOne = ({register, errors}) => {
                 </div>
 
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Blood Group <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">Blood Group <span className="text-red-500 font-bold">*</span></label>
                     <select name="bloodGroup"
                         {...register("bloodGroup", { required: "Blood Group field is required." })}
                         className={`bg-transparent border-2 w-full text-[#39b54a] rounded px-3 py-2 ${errors.bloodGroup ? "focus:outline-red-500 border-red-500" : "focus:outline-[#006837] border-[#006837]"} mt-2`}>
@@ -102,7 +102,7 @@ const InterFormOne = ({register, errors}) => {
             <div className="flex gap-6 mb-5">
                 <div className="w-1/2 flex gap-4">
                     <div className="w-1/2">
-                        <label className="text-[#006837] font-semibold text-xl">Religion (If Want)</label>
+                        <label className="text-[#006837] font-bold text-xl">Religion (If Want)</label>
                         <input
                             type="text"
                             name="religion"
@@ -113,7 +113,7 @@ const InterFormOne = ({register, errors}) => {
                     </div>
 
                     <div className="w-1/2">
-                        <label className="text-[#006837] font-semibold text-xl">Gender <span className="text-red-500 font-bold">*</span></label>
+                        <label className="text-[#006837] font-bold text-xl">Gender <span className="text-red-500 font-bold">*</span></label>
                         <select
                             name="gender"
                             {...register("gender", { required: "Gender field is required." })}
@@ -137,7 +137,7 @@ const InterFormOne = ({register, errors}) => {
                 </div>
 
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Skill <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">Skill <span className="text-red-500 font-bold">*</span></label>
                     <select name="skill"
                         {...register("skill", { required: "Skill field is required." })}
                         className={`bg-transparent border-2 w-full text-[#39b54a] rounded px-3 py-2 ${errors.skill ? "focus:outline-red-500 border-red-500" : "focus:outline-[#006837] border-[#006837]"} mt-2`}>
@@ -161,7 +161,7 @@ const InterFormOne = ({register, errors}) => {
             {/* Profession and Current Institute/Workplace */}
             <div className="flex gap-6 mb-5">
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Profession <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">Profession <span className="text-red-500 font-bold">*</span></label>
                     <input
                         type="text"
                         name="profession"
@@ -179,7 +179,7 @@ const InterFormOne = ({register, errors}) => {
                 </div>
 
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Current Institute/Workplace (If Any)</label>
+                    <label className="text-[#006837] font-bold text-xl">Current Institute/Workplace (If Any)</label>
                     <input
                         type="text"
                         name="institute"
@@ -193,7 +193,7 @@ const InterFormOne = ({register, errors}) => {
             {/* Educational Qualification and T-shirt Size */}
             <div className="flex gap-6 mb-5">
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Educational Qualification <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">Educational Qualification <span className="text-red-500 font-bold">*</span></label>
                     <input
                         type="text"
                         name="education"
@@ -211,7 +211,7 @@ const InterFormOne = ({register, errors}) => {
                 </div>
 
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">T-shirt Size <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">T-shirt Size <span className="text-red-500 font-bold">*</span></label>
                     <select
                         name="tshirtSize"
                         {...register("tshirtSize", { required: "T-shirt size is required." })}
@@ -237,7 +237,7 @@ const InterFormOne = ({register, errors}) => {
             {/* Phone Number and Email Address */}
             <div className="flex gap-6 mb-5">
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Phone Number <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">Phone Number <span className="text-red-500 font-bold">*</span></label>
                     <input
                         type="tel"
                         name="phone"
@@ -254,7 +254,7 @@ const InterFormOne = ({register, errors}) => {
                     )}
                 </div>
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">E-mail Adress <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">E-mail Adress <span className="text-red-500 font-bold">*</span></label>
                     <input
                         type="email"
                         name="email"
@@ -275,7 +275,7 @@ const InterFormOne = ({register, errors}) => {
             {/* Nationality and Passport Number */}
             <div className="flex gap-6 mb-5">
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Nationality <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">Nationality <span className="text-red-500 font-bold">*</span></label>
                     <input
                         type="text"
                         name="nationality"
@@ -293,7 +293,7 @@ const InterFormOne = ({register, errors}) => {
                 </div>
 
                 <div className="w-1/2">
-                    <label className="text-[#006837] font-semibold text-xl">Pasport No <span className="text-red-500 font-bold">*</span></label>
+                    <label className="text-[#006837] font-bold text-xl">Pasport No <span className="text-red-500 font-bold">*</span></label>
                     <input
                         type="text"
                         name="passport"

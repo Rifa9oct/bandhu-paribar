@@ -27,11 +27,13 @@ const BdForm = ({ page }) => {
             <div className="max-w-[1100px] mx-auto pb-[120px] p-8">
                 <form onSubmit={handleSubmit(onSubmit)}>
 
-                <BdFormOne register={register} errors={errors} />
+                    {
+                        parseInt(page) !== 2 && <BdFormOne register={register} errors={errors} />
+                    }
 
-                    {/* {
+                    {
                         parseInt(page) === 2 && <BdFormTwo register={register} errors={errors} />
-                    } */}
+                    }
                     <Pagination errors={errors} />
                 </form>
             </div>

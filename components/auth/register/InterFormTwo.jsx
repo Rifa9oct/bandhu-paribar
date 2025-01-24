@@ -229,7 +229,7 @@ const InterFormTwo = ({ register, errors }) => {
 
             <div>
                 <label className="text-[#006837] font-bold text-xl">
-                    Experience In Social Work / Training on Emergency Response (IfAny) <span className="text-red-500 font-bold">*</span>
+                    Experience In Social Work / Training on Emergency Response (IfAny)
                 </label>
                 <textarea
                     cols="4" rows="4"
@@ -282,7 +282,7 @@ const InterFormTwo = ({ register, errors }) => {
                         />
                         <span className=" text-[#006837] mt-1">( recommended image size 45*55px )</span>
                         {errors.picture && (
-                            <p className="text-red-500 text-sm mt-2">{errors.picture.message}</p>
+                            <p className="text-red-500 text-sm mt-2"><MdError className="text-lg inline" /> {errors.picture.message}</p>
                         )}
                     </div>
 
@@ -296,7 +296,7 @@ const InterFormTwo = ({ register, errors }) => {
                         />
                         <span className=" text-[#006837] mt-1">( recommended image size 45*55px )</span>
                         {errors.signature && (
-                            <p className="text-red-500 text-sm mt-2">{errors.signature.message}</p>
+                            <p className="text-red-500 text-sm mt-2"><MdError className="text-lg inline" /> {errors.signature.message}</p>
                         )}
                     </div>
 
@@ -310,7 +310,7 @@ const InterFormTwo = ({ register, errors }) => {
                         />
                         <span className=" text-[#006837] mt-1">( recommended image size 45*55px )</span>
                         {errors.pasportImage && (
-                            <p className="text-red-500 text-sm mt-2">{errors.pasportImage.message}</p>
+                            <p className="text-red-500 text-sm mt-2"><MdError className="text-lg inline" /> {errors.pasportImage.message}</p>
                         )}
                     </div>
                 </div>
@@ -328,7 +328,7 @@ const InterFormTwo = ({ register, errors }) => {
                 </label>
             </div>
             {errors.declaration && (
-                <p className="text-red-500 text-sm mt-2">{errors.declaration.message}</p>
+                <p className="text-red-500 text-sm mt-2"><MdError className="text-lg inline" /> {errors.declaration.message}</p>
             )}
         </div>
     );
