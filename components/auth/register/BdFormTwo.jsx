@@ -3,6 +3,7 @@
 import { MdError } from "react-icons/md";
 
 const BdFormTwo = ({ register, errors }) => {
+    
     return (
         <div>
             {/* About Father */}
@@ -94,18 +95,18 @@ const BdFormTwo = ({ register, errors }) => {
                 </label>
                 <input
                     type="text"
-                    name="contact"
-                    {...register("contact", { required: "Mother Name field is required." })}
-                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 placeholder-[#39b54a] ${errors.contact
+                    name="motherName"
+                    {...register("motherName", { required: "Mother Name field is required." })}
+                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 placeholder-[#39b54a] ${errors.motherName
                         ? "focus:outline-red-500 border-red-500"
                         : "focus:outline-[#006837] border-[#006837]"
                         } mt-2`}
                     placeholder="Name in English"
                 />
-                {errors.contact && (
+                {errors.motherName && (
                     <span className="text-sm text-red-500 flex items-center mt-1">
                         <MdError className="text-lg mr-1" />
-                        {errors.contact.message}
+                        {errors.motherName.message}
                     </span>
                 )}
             </div>
@@ -253,6 +254,7 @@ const BdFormTwo = ({ register, errors }) => {
                                 <input
                                     type="checkbox"
                                     value={day}
+                                    name="availableDays"
                                     {...register("availableDays", { required: "Please select at least one day" })}
                                     className="accent-[#39b54a]"
                                 />
@@ -277,6 +279,7 @@ const BdFormTwo = ({ register, errors }) => {
                         <label className="font-bold text-xl">Your Picture</label>
                         <input
                             type="file"
+                            name="picture"
                             {...register("picture", { required: "Please upload your picture." })}
                             className="mt-2 border-2 border-[#006837] px-3 py-2 file:border file:border-[#006837] file:text-[#39b54a] file:rounded file:bg-[#cef2de] file:px-3 file:py-1"
                         />
@@ -291,6 +294,7 @@ const BdFormTwo = ({ register, errors }) => {
                         <label className="font-bold text-xl">Your Signature</label>
                         <input
                             type="file"
+                            name="signature"
                             {...register("signature", { required: "Please upload your signature." })}
                             className="mt-2 border-2 border-[#006837] px-3 py-2 file:border file:border-[#006837] file:text-[#39b54a] file:rounded file:bg-[#cef2de] file:px-3 file:py-1"
                         />
@@ -306,6 +310,7 @@ const BdFormTwo = ({ register, errors }) => {
             <div className="flex items-center space-x-2 mt-3">
                 <input
                     type="checkbox"
+                    name="declaration"
                     {...register("declaration", { required: "You must agree to the declaration." })}
                     className="accent-[#39b54a]"
                 />
