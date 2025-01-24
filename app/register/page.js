@@ -1,4 +1,4 @@
-import BdFormOne from "@/components/auth/register/BdFormOne";
+import BdForm from "@/components/auth/register/BdForm";
 import Button from "@/components/auth/register/Button";
 import InterForm from "@/components/auth/register/InterForm";
 
@@ -29,7 +29,7 @@ const RegisterPage = ({ searchParams: { query, page } }) => {
             <Button query={query} />
 
             {
-                query === "bd" && <BdFormOne />
+                query === "bd" && <BdForm page={page} />
             }
 
             {
