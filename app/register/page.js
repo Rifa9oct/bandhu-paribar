@@ -1,7 +1,6 @@
 import BdFormOne from "@/components/auth/register/BdFormOne";
 import Button from "@/components/auth/register/Button";
-import InterFormOne from "@/components/auth/register/InterFormOne";
-import InterFormTwo from "@/components/auth/register/InterFormTwo";
+import InterForm from "@/components/auth/register/InterForm";
 
 const RegisterPage = ({ searchParams: { query, page } }) => {
 
@@ -34,13 +33,8 @@ const RegisterPage = ({ searchParams: { query, page } }) => {
             }
 
             {
-                (query === "inter" ) && <InterFormOne />
+                (query === "inter") && <InterForm page={page} />
             }
-
-            {
-                (query === "inter" && page === 2) && <InterFormTwo />
-            }
-
         </div>
     );
 };

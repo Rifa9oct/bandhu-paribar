@@ -1,8 +1,335 @@
+"use client"
 
-const InterFormTwo = () => {
+import { MdError } from "react-icons/md";
+
+const InterFormTwo = ({ register, errors }) => {
     return (
         <div>
-            
+            {/* About Father */}
+            <div className="mb-5">
+                <div className="mb-8">
+                    <label className="flex justify-center underline underline-offset-4 text-3xl font-bold text-[#006837]">
+                        About Father <span className="text-red-500 font-bold">*</span>
+                    </label>
+                </div>
+
+                <label className="text-[#006837] font-bold text-xl">
+                    Father&apos;s Name <span className="text-red-500 font-bold">*</span>
+                </label>
+                <input
+                    type="text"
+                    name="fatherName"
+                    {...register("fatherName", { required: "Father Name field is required." })}
+                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 placeholder-[#39b54a] ${errors.fatherName
+                        ? "focus:outline-red-500 border-red-500"
+                        : "focus:outline-[#006837] border-[#006837]"
+                        } mt-2`}
+                    placeholder="Name in English"
+                />
+                {errors.fatherName && (
+                    <span className="text-sm text-red-500 flex items-center mt-1">
+                        <MdError className="text-lg mr-1" />
+                        {errors.fatherName.message}
+                    </span>
+                )}
+            </div>
+
+            {/* Father Phone Number and Email Address */}
+            <div className="flex gap-6 mb-5">
+                <div className="w-1/2">
+                    <label className="text-[#006837] font-bold text-xl">
+                        Phone Number <span className="text-red-500 font-bold">*</span>
+                    </label>
+                    <input
+                        type="tel"
+                        name="fatherPhone"
+                        {...register("fatherPhone", { required: "Father's Phone number is required." })}
+                        className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-2 placeholder-[#39b54a] ${errors.fatherPhone
+                            ? "border-red-500 focus:outline-red-500"
+                            : "border-[#006837] focus:outline-[#006837]"
+                            }`}
+                        placeholder="Father's phone number"
+                    />
+                    {errors.fatherPhone && (
+                        <span className="text-sm text-red-500 flex items-center mt-1">
+                            <MdError className="text-lg mr-1" />
+                            {errors.fatherPhone.message}
+                        </span>
+                    )}
+                </div>
+
+                <div className="w-1/2">
+                    <label className="text-[#006837] font-bold text-xl">
+                        Profession <span className="text-red-500 font-bold">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="fatherProfession"
+                        {...register("fatherProfession", { required: "Father's Profession address is required." })}
+                        className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-2 placeholder-[#39b54a] ${errors.fatherProfession
+                            ? "border-red-500 focus:outline-red-500"
+                            : "border-[#006837] focus:outline-[#006837]"
+                            }`}
+                        placeholder="Father's profession"
+                    />
+                    {errors.fatherProfession && (
+                        <span className="text-sm text-red-500 flex items-center mt-1">
+                            <MdError className="text-lg mr-1" />
+                            {errors.fatherProfession.message}
+                        </span>
+                    )}
+                </div>
+            </div>
+
+            {/* About Mother */}
+            <div className="mb-5">
+                <div className="my-8">
+                    <label className="flex justify-center underline underline-offset-4 text-3xl font-bold text-[#006837]">
+                        About Mother <span className="text-red-500 font-bold">*</span>
+                    </label>
+                </div>
+
+                <label className="text-[#006837] font-bold text-xl">
+                    Mother&apos;s Name <span className="text-red-500 font-bold">*</span>
+                </label>
+                <input
+                    type="text"
+                    name="contact"
+                    {...register("contact", { required: "Mother Name field is required." })}
+                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 placeholder-[#39b54a] ${errors.contact
+                        ? "focus:outline-red-500 border-red-500"
+                        : "focus:outline-[#006837] border-[#006837]"
+                        } mt-2`}
+                    placeholder="Name in English"
+                />
+                {errors.contact && (
+                    <span className="text-sm text-red-500 flex items-center mt-1">
+                        <MdError className="text-lg mr-1" />
+                        {errors.contact.message}
+                    </span>
+                )}
+            </div>
+
+            {/* Mother Phone Number and Email Address */}
+            <div className="flex gap-6 mb-5">
+                <div className="w-1/2">
+                    <label className="text-[#006837] font-bold text-xl">
+                        Phone Number <span className="text-red-500 font-bold">*</span>
+                    </label>
+                    <input
+                        type="tel"
+                        name="motherPhone"
+                        {...register("motherPhone", { required: "Mother's Phone number is required." })}
+                        className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-2 placeholder-[#39b54a] ${errors.motherPhone
+                            ? "border-red-500 focus:outline-red-500"
+                            : "border-[#006837] focus:outline-[#006837]"
+                            }`}
+                        placeholder="Mother's phone number"
+                    />
+                    {errors.motherPhone && (
+                        <span className="text-sm text-red-500 flex items-center mt-1">
+                            <MdError className="text-lg mr-1" />
+                            {errors.motherPhone.message}
+                        </span>
+                    )}
+                </div>
+
+                <div className="w-1/2">
+                    <label className="text-[#006837] font-bold text-xl">
+                        Profession <span className="text-red-500 font-bold">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="motherProfession"
+                        {...register("motherProfession", { required: "Mother's Profession address is required." })}
+                        className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-2 placeholder-[#39b54a] ${errors.motherProfession
+                            ? "border-red-500 focus:outline-red-500"
+                            : "border-[#006837] focus:outline-[#006837]"
+                            }`}
+                        placeholder="Mother's profession"
+                    />
+                    {errors.motherProfession && (
+                        <span className="text-sm text-red-500 flex items-center mt-1">
+                            <MdError className="text-lg mr-1" />
+                            {errors.motherProfession.message}
+                        </span>
+                    )}
+                </div>
+            </div>
+
+            {/* emergency contact  */}
+            <div className="mb-5">
+                <label className="flex justify-center text-3xl font-bold text-[#006837]">
+                    Emergency Contact Persone Name <span className="text-red-500 font-bold">*</span>
+                </label>
+                <input
+                    type="text"
+                    name="contactPersone"
+                    {...register("contactPersone", { required: "Emergency contact field is required." })}
+                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 placeholder-[#39b54a] ${errors.contactPersone
+                        ? "focus:outline-red-500 border-red-500"
+                        : "focus:outline-[#006837] border-[#006837]"
+                        } mt-3`}
+                    placeholder="Name in English"
+                />
+                {errors.contactPersone && (
+                    <span className="text-sm text-red-500 flex items-center mt-1">
+                        <MdError className="text-lg mr-1" />
+                        {errors.contactPersone.message}
+                    </span>
+                )}
+            </div>
+
+            {/* Relationship */}
+            <div className="flex gap-6 mb-5">
+                <div className="w-1/2">
+                    <label className="text-[#006837] font-bold text-xl">
+                        Relationship With Your <span className="text-red-500 font-bold">*</span>
+                    </label>
+                    <input
+                        type="tel"
+                        name="relationship"
+                        {...register("relationship", { required: "Relationship field is required." })}
+                        className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-2 placeholder-[#39b54a] ${errors.relationship
+                            ? "border-red-500 focus:outline-red-500"
+                            : "border-[#006837] focus:outline-[#006837]"
+                            }`}
+                        placeholder="Describe your relationship with each other."
+                    />
+                    {errors.relationship && (
+                        <span className="text-sm text-red-500 flex items-center mt-1">
+                            <MdError className="text-lg mr-1" />
+                            {errors.relationship.message}
+                        </span>
+                    )}
+                </div>
+
+                <div className="w-1/2">
+                    <label className="text-[#006837] font-bold text-xl">
+                        Contact Person Phone Number <span className="text-red-500 font-bold">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="contactPersonePhone"
+                        {...register("contactPersonePhone", { required: "Contact Persone phone number is required." })}
+                        className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-2 placeholder-[#39b54a] ${errors.contactPersonePhone
+                            ? "border-red-500 focus:outline-red-500"
+                            : "border-[#006837] focus:outline-[#006837]"
+                            }`}
+                        placeholder="This number will be contacted in case of any emergency."
+                    />
+                    {errors.contactPersonePhone && (
+                        <span className="text-sm text-red-500 flex items-center mt-1">
+                            <MdError className="text-lg mr-1" />
+                            {errors.contactPersonePhone.message}
+                        </span>
+                    )}
+                </div>
+            </div>
+
+            <div>
+                <label className="text-[#006837] font-bold text-xl">
+                    Experience In Social Work / Training on Emergency Response (IfAny) <span className="text-red-500 font-bold">*</span>
+                </label>
+                <textarea
+                    cols="4" rows="4"
+                    name="experienc"
+                    {...register("experienc", { required: false, maxLength: 250 })}
+                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 placeholder-[#39b54a] focus:outline-[#006837] border-[#006837] mt-2`}
+                    placeholder="You can tell if you have done any social work or any training before."
+                />
+                {errors.experienc?.type === "maxLength" && <p className="text-sm mt-1 text-red-500"><MdError className="text-lg inline" />Review message must be less than 250 characters.</p>}
+            </div>
+
+            {/* Days for Volunteerism */}
+            <div className="mb-10 mt-3">
+                <label className="text-[#006837] font-bold text-xl">
+                    You are available for Volunteerism at <span className="text-red-500">*</span>
+                </label>
+                <div className="grid grid-cols-4 gap-4 mt-4">
+                    {["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((day) => (
+                        <div key={day}>
+                            <label className="flex items-center text-lg space-x-2 text-black">
+                                <input
+                                    type="checkbox"
+                                    value={day}
+                                    {...register("availableDays", { required: "Please select at least one day" })}
+                                    className="accent-[#39b54a]"
+                                />
+                                <span>{day}</span>
+                            </label>
+                        </div>
+                    ))}
+                </div>
+                {errors.availableDays && (
+                    <p className="text-red-500 text-sm mt-2"><MdError className="text-lg inline" /> {errors.availableDays.message}</p>
+                )}
+            </div>
+
+            {/* Attached File Section */}
+            <div className="mb-10">
+                <label className="text-[#006837] font-bold underline underline-offset-4 text-2xl block text-center">
+                    Attached File <span className="text-red-500">*</span>
+                </label>
+                <div className="grid grid-cols-3 gap-6 mt-6 text-[#006837]">
+                    {/* Picture */}
+                    <div className="flex flex-col">
+                        <label className="font-bold text-xl">Your Picture</label>
+                        <input
+                            type="file"
+                            {...register("picture", { required: "Please upload your picture." })}
+                            className="mt-2 border-2 border-[#006837] px-3 py-2 file:border file:border-[#006837] file:text-[#39b54a] file:rounded file:bg-[#cef2de] file:px-3 file:py-1"
+                        />
+                        <span className=" text-[#006837] mt-1">( recommended image size 45*55px )</span>
+                        {errors.picture && (
+                            <p className="text-red-500 text-sm mt-2">{errors.picture.message}</p>
+                        )}
+                    </div>
+
+                    {/* Signature */}
+                    <div className="flex flex-col">
+                        <label className="font-bold text-xl">Your Signature</label>
+                        <input
+                            type="file"
+                            {...register("signature", { required: "Please upload your signature." })}
+                            className="mt-2 border-2 border-[#006837] px-3 py-2 file:border file:border-[#006837] file:text-[#39b54a] file:rounded file:bg-[#cef2de] file:px-3 file:py-1"
+                        />
+                        <span className=" text-[#006837] mt-1">( recommended image size 45*55px )</span>
+                        {errors.signature && (
+                            <p className="text-red-500 text-sm mt-2">{errors.signature.message}</p>
+                        )}
+                    </div>
+
+                    {/* Passport Image */}
+                    <div className="flex flex-col">
+                        <label className="font-bold text-xl">Your Pasport Image</label>
+                        <input
+                            type="file"
+                            {...register("pasportImage", { required: "Please upload your pasport image." })}
+                            className="mt-2 border-2 border-[#006837] px-3 py-2 file:border file:border-[#006837] file:text-[#39b54a] file:rounded file:bg-[#cef2de] file:px-3 file:py-1"
+                        />
+                        <span className=" text-[#006837] mt-1">( recommended image size 45*55px )</span>
+                        {errors.pasportImage && (
+                            <p className="text-red-500 text-sm mt-2">{errors.pasportImage.message}</p>
+                        )}
+                    </div>
+                </div>
+            </div>
+
+            {/* Declaration */}
+            <div className="flex items-center space-x-2 mt-3">
+                <input
+                    type="checkbox"
+                    {...register("declaration", { required: "You must agree to the declaration." })}
+                    className="accent-[#39b54a]"
+                />
+                <label className="text-[#006837] font-bold text-2xl">
+                    I do hereby declare that the information furnished above is true.
+                </label>
+            </div>
+            {errors.declaration && (
+                <p className="text-red-500 text-sm mt-2">{errors.declaration.message}</p>
+            )}
         </div>
     );
 };
