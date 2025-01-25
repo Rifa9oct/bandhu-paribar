@@ -1,11 +1,31 @@
 "use client"
 
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
 import { MdError } from "react-icons/md";
 
-const BdFormTwo = ({ register, errors }) => {
-    
+const BdFormTwo = ({ setUserData, userData }) => {
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const { replace } = useRouter();
+
+
+    const onSubmit = async (data) => {
+        setUserData({ ...userData, ...data });
+
+        reset();
+    };
+
+    const handlePrevious = () => {
+        const params = new URLSearchParams(searchParams);
+        params.delete('page');
+        replace(`${pathname}?${params.toString()}`, { scroll: false });
+    }
+
     return (
-        <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
             {/* About Father */}
             <div className="mb-5">
                 <div className="mb-8">
@@ -307,21 +327,33 @@ const BdFormTwo = ({ register, errors }) => {
             </div>
 
             {/* Declaration */}
-            <div className="flex items-center space-x-2 mt-3">
-                <input
-                    type="checkbox"
-                    name="declaration"
-                    {...register("declaration", { required: "You must agree to the declaration." })}
-                    className="accent-[#39b54a]"
-                />
-                <label className="text-[#006837] font-bold text-2xl">
-                    I do hereby declare that the information furnished above is true.
-                </label>
+            <div>
+                <div className="flex items-center space-x-2 mt-3">
+                    <input
+                        type="checkbox"
+                        name="declaration"
+                        {...register("declaration", { required: "You must agree to the declaration." })}
+                        className="accent-[#39b54a]"
+                    />
+                    <label className="text-[#006837] font-bold text-2xl">
+                        I do hereby declare that the information furnished above is true.
+                    </label>
+                </div>
+                {errors.declaration && (
+                    <p className="text-red-500 text-sm mt-2"><MdError className="text-lg inline" /> {errors.declaration.message}</p>
+                )}
             </div>
-            {errors.declaration && (
-                <p className="text-red-500 text-sm mt-2"><MdError className="text-lg inline" /> {errors.declaration.message}</p>
-            )}
-        </div>
+
+            <div className="flex w-full gap-8 justify-center mt-10">
+                <p
+                    onClick={handlePrevious}
+                    className="cursor-pointer border-2 text-center border-[#006837] px-4 py-2 w-[150px] uppercase text-xl font-bold text-[#006837] bg-white rounded-lg hover:border-[#39b54a] hover:text-white hover:bg-[#39b54a]">Previous</p>
+
+                <button
+                    type="submit"
+                    className="border-2 border-[#006837] px-4 py-2 w-[150px] uppercase text-xl font-bold text-[#006837] bg-white rounded-lg hover:border-[#39b54a] hover:text-white hover:bg-[#39b54a]">Submit</button>
+            </div>
+        </form>
     );
 };
 

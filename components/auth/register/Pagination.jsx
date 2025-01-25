@@ -29,6 +29,7 @@ const Pagination = () => {
                     currentPage === 1 ? (
                         <div className="w-full flex justify-center">
                             <button
+                                type="submit"
                                 onClick={() => setCurrentPage(prev => prev + 1)}
                                 className="border-2 border-[#006837] px-4 py-2 w-[150px] uppercase text-xl font-bold text-[#006837] bg-white rounded-lg hover:border-[#39b54a] hover:text-white hover:bg-[#39b54a]">Next</button>
                         </div>
