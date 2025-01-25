@@ -315,15 +315,15 @@ const InterFormOne = ({register, errors}) => {
             <div className="my-10 ">
                 <label className="flex justify-center  underline underline-offset-4 text-3xl font-bold text-[#006837]">Present Adress <span className="text-red-500 font-bold">*</span></label>
                 <input
-                    type="text" name="present"
-                    {...register("present", { required: "Present Adress is required." })}
-                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-8 placeholder-[#39b54a] ${errors.present ? "focus:outline-red-500 border-red-500" : "focus:outline-[#006837] border-[#006837]"}`}
+                    type="text" name="presentAdress"
+                    {...register("presentAdress", { required: "Present Adress is required." })}
+                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-8 placeholder-[#39b54a] ${errors.presentAdress ? "focus:outline-red-500 border-red-500" : "focus:outline-[#006837] border-[#006837]"}`}
                     placeholder="Your Present Adress"
                 />
-                {errors.present && (
+                {errors.presentAdress && (
                     <span className="text-sm text-red-500 flex items-center mt-1">
                         <MdError className="text-lg mr-1" />
-                        {errors.present.message}
+                        {errors.presentAdress.message}
                     </span>
                 )}
             </div>
@@ -332,15 +332,15 @@ const InterFormOne = ({register, errors}) => {
             <div className="my-10 ">
                 <label className="flex justify-center  underline underline-offset-4 text-3xl font-bold text-[#006837]">Permanent Adress <span className="text-red-500 font-bold">*</span></label>
                 <input
-                    type="text" name="permanent"
-                    {...register("permanent", { required: "Permanent Adress is required." })}
-                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-8 placeholder-[#39b54a] ${errors.permanent ? "focus:outline-red-500 border-red-500" : "focus:outline-[#006837] border-[#006837]"}`}
-                    placeholder="Your Permanent Adress"
+                    type="text" name="permanentAdress"
+                    {...register("permanentAdress", { required: "Permanent Adress is required." })}
+                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-8 placeholder-[#39b54a] ${errors.permanentAdress ? "focus:outline-red-500 border-red-500" : "focus:outline-[#006837] border-[#006837]"}`}
+                    placeholder="Your permanent Adress"
                 />
-                {errors.permanent && (
+                {errors.permanentAdress && (
                     <span className="text-sm text-red-500 flex items-center mt-1">
                         <MdError className="text-lg mr-1" />
-                        {errors.permanent.message}
+                        {errors.permanentAdress.message}
                     </span>
                 )}
             </div>
