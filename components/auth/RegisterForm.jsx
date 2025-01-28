@@ -1,17 +1,41 @@
 "use client"
 
+import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { MdError } from "react-icons/md";
+import Swal from "sweetalert2";
 
 const RegisterForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const router = useRouter();
 
     const onSubmit = async (data) => {
-        console.log(data);
+        try {
+            const name = data.name;
+            const email = data.email;
+            const password = data.password;
+            const user = { name, email, password };
 
+            const res = await axios.post("/api/auth/register", user);
+
+            if (res.status === 201) {
+                router.push("/login");
+            }
+
+        } catch (error) {
+            if (error.status === 409) {
+                Swal.fire({
+                    title: `${error.response.data}🙄`,
+                    icon: "warning",
+                });
+            } else {
+                console.log(error);
+            }
+        }
         reset();
     }
 

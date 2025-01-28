@@ -1,17 +1,35 @@
 "use client"
 
+import { login } from "@/actions";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { MdError } from "react-icons/md";
+import Swal from "sweetalert2";
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const router = useRouter();
 
     const onSubmit = async (data) => {
-        console.log(data)
+        try {
+            const res = await login(data);
+            if (res.status === 200) {
+                router.push("/");
+            }
+        } catch (err) {
+            if (err.message) {
+                Swal.fire({
+                    title: `${err?.message}😟`,
+                    icon: "error",
+                });
+            } else {
+                console.log(err)
+            }
+        }
         reset();
     }
 
@@ -54,7 +72,7 @@ const LoginForm = () => {
                     </div>
                     <Link href="#" className="text-[#39b54a]">Forgot Password</Link>
                 </div>
-                
+
                 <div className="mt-4">
                     <button type="submit"
                         className="block w-full py-2 text-center text-white bg-[#39b54a] border-2 border-[#39b54a] rounded hover:bg-transparent hover:text-[#39b54a] transition uppercase font-roboto font-medium">Login</button>

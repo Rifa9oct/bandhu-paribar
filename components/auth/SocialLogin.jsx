@@ -2,8 +2,12 @@
 
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa6";
+import { signIn } from "next-auth/react";
 
 const SocialLogin = () => {
+    const handleAuth = (provider) => {
+        signIn(provider, { callbackUrl: '/' });
+    }
 
     return (
         <div className="mt-4 flex gap-4">
@@ -18,6 +22,7 @@ const SocialLogin = () => {
             <div className="flex items-center justify-center gap-1 border-2 border-[#006837] w-1/2 rounded">
                 <p className="text-2xl"><FcGoogle /></p>
                 <button
+                    onClick={() => handleAuth("google")}
                     className="hover:text-[#39b54a] py-2 text-center text-[#006837] rounded font-roboto font-bold">
                     Google
                 </button>
