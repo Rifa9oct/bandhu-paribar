@@ -3,8 +3,14 @@ import Image from "next/image";
 import { FaUser } from "react-icons/fa";
 import CustomLink from "./CustomLink";
 import Link from "next/link";
+import { auth } from "@/auth";
+import Signout from "./Signout";
 
-const Navbar = () => {
+const Navbar = async () => {
+    const session = await auth();
+    const user = session?.user;
+    console.log(user);
+
     return (
         <div className="px-[210px] flex justify-between relative bg-[#006837] text-white">
             <div className="relative">
@@ -23,9 +29,17 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center">
-                <Link href="/login">
-                    <button className="bg-white px-3 py-1 hover:text-[#009345] text-[#006837] font-bold rounded-lg">Sign In</button>
-                </Link>
+
+                {
+                    user ? (
+                        <Signout />
+                    ) : (
+                        <Link href="/login">
+                            <button className="bg-white px-3 py-1 hover:text-[#009345] text-[#006837] font-bold rounded-lg">Sign In</button>
+                        </Link>
+                    )
+                }
+
 
                 <div className="ml-[23px]">
                     <p className="flex items-center justify-center text-[#006837] text-2xl w-10 h-10 bg-white rounded-full"><FaUser /></p>

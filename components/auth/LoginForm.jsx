@@ -1,6 +1,6 @@
 "use client"
 
-import { login } from "@/actions";
+import { customRevalidatePath, login } from "@/actions";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -17,8 +17,13 @@ const LoginForm = () => {
     const onSubmit = async (data) => {
         try {
             const res = await login(data);
+
             if (res.status === 200) {
-                router.push("/");
+                const res = await customRevalidatePath();
+                if (res.status === 200) {
+                    router.push("/");
+                }
+
             }
         } catch (err) {
             if (err.message) {
