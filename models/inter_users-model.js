@@ -1,13 +1,17 @@
 import mongoose, { Schema } from "mongoose";
 
 const interUserSchema = new Schema({
+    userId: {
+        required: true,
+        type: String
+    },
     name: {
         required: true,
         type: String
     },
     day: {
         required: true,
-        type: Number
+        type: String
     },
     month: {
         required: true,
@@ -15,7 +19,7 @@ const interUserSchema = new Schema({
     },
     year: {
         required: true,
-        type: Number
+        type: String
     },
     bloodGroup: {
         required: true,
@@ -51,7 +55,7 @@ const interUserSchema = new Schema({
     },
     phone: {
         required: true,
-        type: Number
+        type: String
     },
     email: {
         required: true,
@@ -79,7 +83,7 @@ const interUserSchema = new Schema({
     },
     fatherPhone: {
         required: true,
-        type: Number
+        type: String
     },
     fatherProfession: {
         required: true,
@@ -91,7 +95,7 @@ const interUserSchema = new Schema({
     },
     motherPhone: {
         required: true,
-        type: Number
+        type: String
     },
     motherProfession: {
         required: true,
@@ -107,7 +111,7 @@ const interUserSchema = new Schema({
     },
     contactPersonePhone: {
         required: true,
-        type: Number
+        type: String
     },
     experienc: {
         required: false,
@@ -115,23 +119,23 @@ const interUserSchema = new Schema({
     },
     availableDays: {
         required: true,
-        type: String
+        type: Array
     },
-    picture: {
-        required: true,
-        type: String
-    },
-    signature: {
-        required: true,
-        type: String
-    },
-    pasportImage: {
-        required: true,
-        type: String
-    },
+    // picture: {
+    //     required: true,
+    //     type: String
+    // },
+    // signature: {
+    //     required: true,
+    //     type: String
+    // },
+    // pasportImage: {
+    //     required: true,
+    //     type: String
+    // },
     declaration: {
         required: true,
-        type: String
+        type: Boolean
     }
 });
 

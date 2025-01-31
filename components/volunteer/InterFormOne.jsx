@@ -6,7 +6,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import InterFormTwo from "./InterFormTwo";
 
-const InterFormOne = ({ page }) => {
+const InterFormOne = ({ page, userId }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const [userData, setUserData] = useState({});
@@ -16,8 +16,6 @@ const InterFormOne = ({ page }) => {
     const { replace } = useRouter();
 
     const onSubmit = async (data) => {
-        console.log("data", data);
-
         setUserData({ ...userData, ...data });
 
         const params = new URLSearchParams(searchParams);
@@ -33,17 +31,14 @@ const InterFormOne = ({ page }) => {
         reset();
     };
 
-    console.log("userData", userData);
-
-
     return (
         <div>
-
             {
                 parseInt(page) === 2 ? (
                     <InterFormTwo
                         userData={userData}
                         setUserData={setUserData}
+                        userId={userId}
                     />
                 ) : (
                     <form onSubmit={handleSubmit(onSubmit)}>

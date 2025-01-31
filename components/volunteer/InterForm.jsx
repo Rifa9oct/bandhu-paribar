@@ -1,6 +1,9 @@
+import { auth } from "@/auth";
 import InterFormOne from "./InterFormOne";
 
-const InterForm = ({ page }) => {
+const InterForm = async ({ page }) => {
+    const session = await auth();
+    const user = session?.user;
 
     return (
         <div className="bg-[#e9f5f0] min-h-screen">
@@ -11,6 +14,7 @@ const InterForm = ({ page }) => {
             <div className="max-w-[1100px] mx-auto pb-[120px] p-8">
                 <InterFormOne
                     page={page}
+                    userId={user?.userId}
                 />
             </div>
         </div>

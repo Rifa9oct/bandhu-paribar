@@ -1,6 +1,10 @@
 import mongoose, { Schema } from "mongoose";
 
 const bdUserSchema = new Schema({
+    userId: {
+        required: true,
+        type: ObjectId
+    },
     name: {
         required: true,
         type: String
@@ -133,14 +137,14 @@ const bdUserSchema = new Schema({
         required: true,
         type: String
     },
-    picture: {
-        required: true,
-        type: String
-    },
-    signature: {
-        required: true,
-        type: String
-    },
+    // picture: {
+    //     required: true,
+    //     type: String
+    // },
+    // signature: {
+    //     required: true,
+    //     type: String
+    // },
     declaration: {
         required: true,
         type: String

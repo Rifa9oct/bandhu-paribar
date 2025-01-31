@@ -1,19 +1,58 @@
 "use client"
 
+import useAxios from "@/hooks/useAxios";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { MdError } from "react-icons/md";
+import { useSession } from "next-auth/react";
+import Swal from "sweetalert2";
+import { customRevalidatePath } from "@/actions";
 
-const InterFormTwo = ({ setUserData, userData }) => {
+const InterFormTwo = ({ setUserData, userData, userId }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const { status, update } = useSession();
+
+    const { axiosAuth } = useAxios();
 
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
 
+    if (status === "unauthenticated") {
+        update();
+    }
 
     const onSubmit = async (data) => {
         setUserData({ ...userData, ...data });
+
+        const payload = { userId, ...userData, ...data }
+        try {
+            const res = await axiosAuth.post("/api/auth/intervolunteer", payload);
+
+            console.log(res);
+
+            if (res.status === 201) {
+                const res = await customRevalidatePath();
+
+                if (res.status === 200) {
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: "Successfully stored your all information.",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            }
+        } catch (error) {
+            if (error.status === 409) {
+                Swal.fire({
+                    position: "top-center",
+                    icon: "error",
+                    title: `${error.response.data}`,
+                });
+            }
+        }
 
         reset();
     };
@@ -115,18 +154,18 @@ const InterFormTwo = ({ setUserData, userData }) => {
                 </label>
                 <input
                     type="text"
-                    name="contact"
-                    {...register("contact", { required: "Mother Name field is required." })}
-                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 placeholder-[#39b54a] ${errors.contact
+                    name="motherName"
+                    {...register("motherName", { required: "Mother Name field is required." })}
+                    className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 placeholder-[#39b54a] ${errors.motherName
                         ? "focus:outline-red-500 border-red-500"
                         : "focus:outline-[#006837] border-[#006837]"
                         } mt-2`}
                     placeholder="Name in English"
                 />
-                {errors.contact && (
+                {errors.motherName && (
                     <span className="text-sm text-red-500 flex items-center mt-1">
                         <MdError className="text-lg mr-1" />
-                        {errors.contact.message}
+                        {errors.motherName.message}
                     </span>
                 )}
             </div>
@@ -230,7 +269,7 @@ const InterFormTwo = ({ setUserData, userData }) => {
                         Contact Person Phone Number <span className="text-red-500 font-bold">*</span>
                     </label>
                     <input
-                        type="text"
+                        type="tel"
                         name="contactPersonePhone"
                         {...register("contactPersonePhone", { required: "Contact Persone phone number is required." })}
                         className={`w-full bg-transparent border-2 text-[#39b54a] rounded px-3 py-2 mt-2 placeholder-[#39b54a] ${errors.contactPersonePhone
@@ -298,6 +337,7 @@ const InterFormTwo = ({ setUserData, userData }) => {
                         <label className="font-bold text-xl">Your Picture</label>
                         <input
                             type="file"
+                            name="picture"
                             {...register("picture", { required: "Please upload your picture." })}
                             className="mt-2 border-2 border-[#006837] px-3 py-2 file:border file:border-[#006837] file:text-[#39b54a] file:rounded file:bg-[#cef2de] file:px-3 file:py-1"
                         />
@@ -312,6 +352,7 @@ const InterFormTwo = ({ setUserData, userData }) => {
                         <label className="font-bold text-xl">Your Signature</label>
                         <input
                             type="file"
+                            name="signature"
                             {...register("signature", { required: "Please upload your signature." })}
                             className="mt-2 border-2 border-[#006837] px-3 py-2 file:border file:border-[#006837] file:text-[#39b54a] file:rounded file:bg-[#cef2de] file:px-3 file:py-1"
                         />
@@ -326,6 +367,7 @@ const InterFormTwo = ({ setUserData, userData }) => {
                         <label className="font-bold text-xl">Your Pasport Image</label>
                         <input
                             type="file"
+                            name="pasportImage"
                             {...register("pasportImage", { required: "Please upload your pasport image." })}
                             className="mt-2 border-2 border-[#006837] px-3 py-2 file:border file:border-[#006837] file:text-[#39b54a] file:rounded file:bg-[#cef2de] file:px-3 file:py-1"
                         />
