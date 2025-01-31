@@ -1,6 +1,5 @@
 import More from "./More";
 import Image from "next/image";
-import { FaUser } from "react-icons/fa";
 import CustomLink from "./CustomLink";
 import Link from "next/link";
 import { auth } from "@/auth";
@@ -9,6 +8,8 @@ import Signout from "./Signout";
 const Navbar = async () => {
     const session = await auth();
     const user = session?.user;
+    const firstLetter = session?.user?.name.slice(0, 1);
+
     console.log(user);
 
     return (
@@ -40,12 +41,27 @@ const Navbar = async () => {
                     )
                 }
 
-
-                <div className="ml-[23px]">
-                    <p className="flex items-center justify-center text-[#006837] text-2xl w-10 h-10 bg-white rounded-full"><FaUser /></p>
-                </div>
+                {
+                    user ? (
+                        <div className="ml-[23px]">
+                            {
+                                user?.image ? (
+                                    <div className="relative ">
+                                        <Image src={user?.image} width={45} height={45} alt="profile image" className="rounded-full border-2 border-white" />
+                                        <p className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full "></p>
+                                    </div>
+                                ) : (
+                                    <div className="relative ">
+                                        <p className="flex items-center justify-center text-[#006837] text-2xl font-bold w-10 h-10 bg-white rounded-full">{firstLetter}</p>
+                                        <p className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full "></p>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    ) : ""
+                }
             </div>
-        </div>
+        </div >
     );
 };
 
