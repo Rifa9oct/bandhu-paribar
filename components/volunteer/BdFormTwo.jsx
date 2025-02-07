@@ -3,15 +3,17 @@
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { MdError } from "react-icons/md";
-import Swal from "sweetalert2";
 import { useSession } from "next-auth/react";
 import { customRevalidatePath } from "@/actions";
 import useAxios from "@/hooks/useAxios";
+import { useEffect, useState } from "react";
 
 const BdFormTwo = ({ setUserData, userData, userId }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { status, update } = useSession();
     const { axiosAuth } = useAxios();
+
+    const [storedInfo, setStoredInfo] = useState(false);
 
     const searchParams = useSearchParams();
     const pathname = usePathname();
@@ -29,29 +31,15 @@ const BdFormTwo = ({ setUserData, userData, userId }) => {
         try {
             const res = await axiosAuth.post("/api/auth/bdvolunteer", payload);
 
-            console.log(res);
-
             if (res.status === 201) {
                 const res = await customRevalidatePath();
 
                 if (res.status === 200) {
-                    Swal.fire({
-                        position: "top-center",
-                        icon: "success",
-                        title: "Successfully stored your all information.",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
+                    setStoredInfo(true);
                 }
             }
         } catch (error) {
-            if (error.status === 409) {
-                Swal.fire({
-                    position: "top-center",
-                    icon: "error",
-                    title: `${error.response.data}`,
-                });
-            }
+            console.loc(error);
         }
 
         reset();
@@ -62,6 +50,18 @@ const BdFormTwo = ({ setUserData, userData, userId }) => {
         params.delete('page');
         replace(`${pathname}?${params.toString()}`, { scroll: false });
     }
+
+    useEffect(() => {
+        const params = new URLSearchParams(searchParams);
+
+        if (storedInfo) {
+            params.set("stored", storedInfo);
+        } else {
+            params.delete("stored");
+        }
+        replace(`${pathname}?${params.toString()}`, { scroll: false });
+
+    }, [storedInfo, pathname, replace, searchParams])
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
