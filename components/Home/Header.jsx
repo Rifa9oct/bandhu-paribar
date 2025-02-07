@@ -5,7 +5,7 @@ import { IoCall, IoMail } from "react-icons/io5";
 
 const Header = () => {
     return (
-        <div className="flex justify-between items-center bg-[#c2272d] py-3 text-white px-[210px]">
+        <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center bg-[#c2272d] py-3 text-white px-8 lg:px-[210px]">
             <div className="flex gap-6 items-center">
                 <div className="flex gap-1 items-center">
                     <IoCall />

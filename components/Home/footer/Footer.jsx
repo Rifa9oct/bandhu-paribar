@@ -14,7 +14,7 @@ const Footer = () => {
                     <h3>Camping</h3>
                 </div>
 
-                <div className="px-10">
+                <div className="hidden md:block px-10">
                     <h1 className="text-2xl font-semibold text-center">FOR NEWS,UPDATS & <br />PROMOTIONAL EVENTS</h1>
 
                     <div>
@@ -32,7 +32,16 @@ const Footer = () => {
                 </div>
             </div>
 
-            <p className="h-8 bg-[#c2272d] w-full mt-10 text-center text-white py-2 text-sm">Copyright © 2025 - All right reserved by ( https://github.com/Rifa9oct )</p>
+            <div className="md:hidden  block px-10">
+                <h1 className="text-2xl font-semibold text-center text-white mt-8">FOR NEWS,UPDATS & <br />PROMOTIONAL EVENTS</h1>
+
+                <div>
+                    <NewsUpdateForm />
+                </div>
+            </div>
+
+
+            <p className="md:h-10 bg-[#c2272d] w-full mt-10 text-center text-white py-2 text-sm">Copyright © 2025 - All right reserved by ( https://github.com/Rifa9oct )</p>
         </div>
     );
 };

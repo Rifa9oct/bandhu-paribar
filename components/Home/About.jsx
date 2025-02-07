@@ -3,12 +3,12 @@ import Link from "next/link";
 
 const About = () => {
     return (
-        <div className="w-full flex justify-center items-center relative h-[600px] bg-[#006837]" >
+        <div className="w-full flex justify-center items-center relative py-20 lg:scroll-py-0.5  lg:h-[600px] bg-[#006837]" >
             <Image src="/about_top.png" width={1000} height={1000} alt="about" className="absolute right-0 top-0" />
             <Image src="/about_bottom.png" width={720} height={720} alt="about" className="absolute left-0 bottom-0" />
 
-            <div className="w-[960px] flex justify-between items-center z-10 text-white">
-                <div className="w-[520px]">
+            <div className="lg:w-[960px] flex flex-col gap-16 lg:gap-0 lg:flex-row justify-between items-center z-10 text-white">
+                <div className="w-[320px] md:w-[520px]">
                     <Image src="/about.jpg" width={520} height={520} alt="about banner" className="border-[4px] border-white rounded-2xl" />
                 </div>
                 <div className="text-sm w-[350px]">

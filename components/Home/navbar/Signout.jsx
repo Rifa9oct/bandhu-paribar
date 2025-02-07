@@ -8,7 +8,7 @@ const Signout = () => {
             onClick={() => {
                 signOut({ callbackUrl: "/login" })
             }}
-            className="bg-white px-3 py-1 hover:text-[#009345] text-[#006837] font-bold rounded-lg">Sign Out</button>
+            className="bg-white lg:px-3 lg:py-1 hover:text-[#009345] lg:text-[#006837] font-bold rounded-lg">Sign Out</button>
     );
 };
 

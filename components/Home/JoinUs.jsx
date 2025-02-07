@@ -8,7 +8,7 @@ const JoinUs = () => {
                 <p className="w-[100px] bg-[#006837] py-[3px] mt-2"></p>
             </div>
 
-            <div className="w-[960px] mx-auto flex justify-center gap-[50px] items-center">
+            <div className="lg:w-[960px] mx-auto flex flex-col lg:flex-row justify-center gap-[50px] items-center">
                 <div className="w-[285px] flex flex-col justify-center items-center text-center">
                     <div className="w-[80px] h-[80px]">
                         <Image src="/donation.png" width={250} height={250} alt="donation" />

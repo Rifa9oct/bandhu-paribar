@@ -39,15 +39,15 @@ const Carousel = () => {
               className="relative w-full h-[500px] bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="absolute inset-0 bg-[#006837] bg-opacity-35 flex flex-col justify-center items-start pl-[210px] text-center text-white">
+              <div className="absolute inset-0 pt-[145px] md:pt-[100px] lg:pt-0 bg-[#006837] bg-opacity-35 flex flex-col lg:justify-center lg:items-start pl-8 lg:pl-[210px] text-center text-white">
                 <h2 className="text-5xl font-bold font-serif">Join to become a Friend</h2>
                 <p className="text-lg mt-4">Be a friend and reach out for a smile on another friend&apos;s face.</p>
 
-                <Link href="#" className="relative mt-10">
-                  <button className="w-[180px] text-start bg-white text-[#009245] font-bold text-lg py-[8.5px] rounded-lg pl-3">Be a Friend!</button>
+                <Link href="#">
+                  <div className="relative w-[200px] mx-auto mt-10">
+                    <button className="w-[180px] text-start bg-white text-[#009245] font-bold text-lg py-[6px] rounded-lg pl-3">Be a Friend!</button>
 
-                  <div className="absolute top-0 -right-1">
-                    <Image src="/button.png" alt="My Icon" width={63} height={63} className="rounded-lg" />
+                    <Image src="/button.png" alt="My Icon" width={56} height={56} className="absolute top-0 right-0  rounded-lg" />
                   </div>
                 </Link>
               </div>

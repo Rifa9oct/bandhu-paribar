@@ -4,6 +4,7 @@ import CustomLink from "./CustomLink";
 import Link from "next/link";
 import { auth } from "@/auth";
 import Signout from "./Signout";
+import NavList from "./NavList";
 
 const Navbar = async () => {
     const session = await auth();
@@ -13,14 +14,14 @@ const Navbar = async () => {
     console.log(user);
 
     return (
-        <div className="px-[210px] flex justify-between relative bg-[#006837] text-white">
+        <div className="lg:px-[210px] px-8 flex justify-between relative bg-[#006837] text-white">
             <div className="relative">
-                <div className="absolute top-0 z-10 flex items-center justify-center w-[130px] h-[120px] rounded-b-[20px] bg-white border-2 border-t-0 border-[#009445]">
+                <div className="absolute top-0 z-10 flex items-center justify-center w-[110px] h-[110px] md:w-[130px] md:h-[120px] rounded-b-[20px] bg-white border-2 border-t-0 border-[#009445]">
                     <Image src="/logo.png" width={100} height={100} alt="logo" />
                 </div>
             </div>
 
-            <div className="flex gap-4 items-center font-medium py-5">
+            <div className="hidden lg:flex gap-4 items-center font-medium py-5">
                 <CustomLink path="/">Home</CustomLink>
                 <CustomLink path="/about">AboutUs</CustomLink>
                 <div>
@@ -29,7 +30,7 @@ const Navbar = async () => {
                 <CustomLink path="/contact">ContactUs</CustomLink>
             </div>
 
-            <div className="flex items-center">
+            <div className="hidden lg:flex items-center">
 
                 {
                     user ? (
@@ -60,6 +61,11 @@ const Navbar = async () => {
                         </div>
                     ) : ""
                 }
+            </div>
+
+
+            <div className="lg:hidden block">
+                <NavList user={user} firstLetter={firstLetter} />
             </div>
         </div >
     );
