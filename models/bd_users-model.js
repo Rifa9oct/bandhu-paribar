@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 const bdUserSchema = new Schema({
     userId: {
         required: true,
-        type: ObjectId
+        type: String
     },
     name: {
         required: true,
@@ -11,7 +11,7 @@ const bdUserSchema = new Schema({
     },
     day: {
         required: true,
-        type: Number
+        type: String
     },
     month: {
         required: true,
@@ -19,7 +19,7 @@ const bdUserSchema = new Schema({
     },
     year: {
         required: true,
-        type: Number
+        type: String
     },
     bloodGroup: {
         required: true,
@@ -55,7 +55,7 @@ const bdUserSchema = new Schema({
     },
     phone: {
         required: true,
-        type: Number
+        type: String
     },
     email: {
         required: true,
@@ -99,7 +99,7 @@ const bdUserSchema = new Schema({
     },
     fatherPhone: {
         required: true,
-        type: Number
+        type: String
     },
     fatherProfession: {
         required: true,
@@ -111,7 +111,7 @@ const bdUserSchema = new Schema({
     },
     motherPhone: {
         required: true,
-        type: Number
+        type: String
     },
     motherProfession: {
         required: true,
@@ -127,7 +127,7 @@ const bdUserSchema = new Schema({
     },
     contactPersonePhone: {
         required: true,
-        type: Number
+        type: String
     },
     experienc: {
         required: false,
@@ -135,7 +135,7 @@ const bdUserSchema = new Schema({
     },
     availableDays: {
         required: true,
-        type: String
+        type: Array
     },
     // picture: {
     //     required: true,

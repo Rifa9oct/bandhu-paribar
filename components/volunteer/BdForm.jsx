@@ -1,6 +1,9 @@
+import { auth } from "@/auth";
 import BdFormOne from "./BdFormOne";
 
-const BdForm = ({ page }) => {
+const BdForm = async ({ page }) => {
+    const session = await auth();
+    const user = session?.user;
 
     return (
         <div className="bg-[#e9f5f0] min-h-screen">
@@ -11,6 +14,7 @@ const BdForm = ({ page }) => {
             <div className="max-w-[1100px] mx-auto pb-[120px] p-8">
                 <BdFormOne
                     page={page}
+                    userId={user?.userId}
                 />
             </div>
         </div>

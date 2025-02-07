@@ -3,17 +3,56 @@
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { MdError } from "react-icons/md";
+import Swal from "sweetalert2";
+import { useSession } from "next-auth/react";
+import { customRevalidatePath } from "@/actions";
+import useAxios from "@/hooks/useAxios";
 
-const BdFormTwo = ({ setUserData, userData }) => {
+const BdFormTwo = ({ setUserData, userData, userId }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const { status, update } = useSession();
+    const { axiosAuth } = useAxios();
 
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
 
+    if (status === "unauthenticated") {
+        update();
+    }
+
 
     const onSubmit = async (data) => {
         setUserData({ ...userData, ...data });
+
+        const payload = { userId, ...userData, ...data }
+        try {
+            const res = await axiosAuth.post("/api/auth/bdvolunteer", payload);
+
+            console.log(res);
+
+            if (res.status === 201) {
+                const res = await customRevalidatePath();
+
+                if (res.status === 200) {
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: "Successfully stored your all information.",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            }
+        } catch (error) {
+            if (error.status === 409) {
+                Swal.fire({
+                    position: "top-center",
+                    icon: "error",
+                    title: `${error.response.data}`,
+                });
+            }
+        }
 
         reset();
     };

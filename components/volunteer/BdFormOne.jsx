@@ -6,7 +6,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import BdFormTwo from "./BdFormTwo";
 import { useState } from "react";
 
-const BdFormOne = ({ page }) => {
+const BdFormOne = ({ page, userId }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const [userData, setUserData] = useState({});
@@ -33,8 +33,6 @@ const BdFormOne = ({ page }) => {
         reset();
     };
 
-    console.log("userData", userData);
-
     return (
         <div>
             {
@@ -42,6 +40,7 @@ const BdFormOne = ({ page }) => {
                     <BdFormTwo
                         userData={userData}
                         setUserData={setUserData}
+                        userId={userId}
                     />
                 ) : (
                     <form onSubmit={handleSubmit(onSubmit)}>
