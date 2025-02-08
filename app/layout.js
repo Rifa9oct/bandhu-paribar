@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Home/Header";
 import Footer from "@/components/Home/footer/Footer";
 import { SessionProvider } from "next-auth/react";
+import AOSProvider from "@/utils/AOSProvider";
 
 export const metadata = {
   title: "Bandhu Paribar",
@@ -14,10 +15,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="m-0">
         <SessionProvider>
-          <Header />
-          <Navbar />
-          {children}
-          <Footer />
+          <AOSProvider>
+            <Header />
+            <Navbar />
+            {children}
+            <Footer />
+          </AOSProvider>
         </SessionProvider>
       </body>
     </html>

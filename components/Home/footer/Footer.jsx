@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="bg-[#006837] pt-10">
             <div className="flex gap-10 justify-center text-white">
 
-                <div className="flex flex-col justify-center text-center gap-2">
+                <div data-aos="fade-right" data-aos-duration="1000" className="flex flex-col justify-center text-center gap-2">
                     <h1 className="text-xl mb-3 font-bold text-[#fdff06]">HELP</h1>
                     <h3>FAQ</h3>
                     <h3>Contact</h3>
@@ -22,7 +22,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col justify-center gap-2 text-center">
+                <div data-aos="fade-left" className="flex flex-col justify-center gap-2 text-center">
                     <h1 className="text-xl mb-3 font-bold text-[#fdff06]">VISIT</h1>
                     <h3>About </h3>
                     <h3>UsOurInitiativ</h3>
@@ -39,7 +39,6 @@ const Footer = () => {
                     <NewsUpdateForm />
                 </div>
             </div>
-
 
             <p className="md:h-10 bg-[#c2272d] w-full mt-10 text-center text-white py-2 text-sm">Copyright © 2025 - All right reserved by ( https://github.com/Rifa9oct )</p>
         </div>

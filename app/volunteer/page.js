@@ -11,8 +11,8 @@ const VolunteerPage = ({ searchParams: { query, page, stored } }) => {
                 style={{ backgroundImage: `url(/banner1.png)` }}
             >
                 <div className="absolute inset-0 flex flex-col justify-center items-center font-bold top-0 bg-[#006837] bg-opacity-35 h-[450px] text-white">
-                    <h1 className="uppercase text-4xl md:text-5xl text-center mb-3">Volunteer Registration</h1>
-                    <p className="text-lg text-center ">Be a friend and reach out for a smile on another friend&apos;s face.</p>
+                    <h1 data-aos="fade-right" data-aos-duration="1000" className="uppercase text-4xl md:text-5xl text-center mb-3">Volunteer Registration</h1>
+                    <p data-aos="fade-left" data-aos-duration="1000" className="text-lg text-center ">Be a friend and reach out for a smile on another friend&apos;s face.</p>
                 </div>
             </div >
 
