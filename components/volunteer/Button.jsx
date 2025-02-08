@@ -24,14 +24,14 @@ const Button = ({ query }) => {
         <div className="pb-16 font-bold bg-[#e9f5f0]">
             <div className="flex justify-center">
                 <button onClick={() => setItem("bd")}
-                    className={`${query === "bd" ? "border-[#39b54a] bg-[#39b54a] text-white" : "border-[#006837] text-[#006837]"} border-[4px] hover:border-[#39b54a] text-3xl w-[550px] py-2 hover:bg-[#39b54a] hover:text-white`}>
+                    className={`${query === "bd" ? "border-[#39b54a] bg-[#39b54a] text-white" : "border-[#006837] text-[#006837]"} border-[4px] hover:border-[#39b54a] text-xl md:text-3xl px-3 md:px-0 md:w-[550px] py-2 hover:bg-[#39b54a] hover:text-white`}>
                     FOR BANGLADESHI VOLUNTEER
                 </button>
             </div>
 
             <div className="flex justify-center">
                 <button onClick={() => setItem("inter")}
-                    className={`${query === "inter" ? "border-[#39b54a] bg-[#39b54a] text-white" : "border-[#006837] text-[#006837]"} border-[4px] hover:border-[#39b54a] mt-5 text-3xl w-[550px] py-2 hover:bg-[#39b54a] hover:text-white`}>
+                    className={`${query === "inter" ? "border-[#39b54a] bg-[#39b54a] text-white" : "border-[#006837] text-[#006837]"} border-[4px] hover:border-[#39b54a] mt-5 text-xl md:text-3xl px-3 md:px-0 md:w-[550px] py-2 hover:bg-[#39b54a] hover:text-white`}>
                     FOR INTERNATIONAL VOLUNTEER
                 </button>
             </div>

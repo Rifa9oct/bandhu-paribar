@@ -62,8 +62,8 @@ const BdFormOne = ({ page, userId }) => {
                         </div>
 
                         {/* Date of Birth and blood goup */}
-                        <div className="flex w-full gap-6 items-center mb-5">
-                            <div className="w-1/2">
+                        <div className="flex flex-col lg:flex-row w-full gap-6 items-center mb-5">
+                            <div className="w-full lg:w-1/2">
                                 <label className="text-[#006837] font-bold text-xl">Date of Birth <span className="text-red-500 font-bold">*</span></label>
                                 <div className="flex gap-4 mt-2">
                                     <select
@@ -113,7 +113,7 @@ const BdFormOne = ({ page, userId }) => {
                                 ) : null}
                             </div>
 
-                            <div className="w-1/2">
+                            <div className="w-full lg:w-1/2">
                                 <label className="text-[#006837] font-bold text-xl">Blood Group <span className="text-red-500 font-bold">*</span></label>
                                 <select name="bloodGroup"
                                     {...register("bloodGroup", { required: "Blood Group field is required." })}
@@ -136,8 +136,8 @@ const BdFormOne = ({ page, userId }) => {
                         </div>
 
                         {/* Religion and Gender */}
-                        <div className="flex gap-6 mb-5">
-                            <div className="w-1/2 flex gap-4">
+                        <div className="flex flex-col lg:flex-row gap-6 mb-5">
+                            <div className="w-full lg:w-1/2 flex gap-4">
                                 <div className="w-1/2">
                                     <label className="text-[#006837] font-bold text-xl">Religion (If Want)</label>
                                     <input
@@ -173,7 +173,7 @@ const BdFormOne = ({ page, userId }) => {
                                 </div>
                             </div>
 
-                            <div className="w-1/2">
+                            <div className="w-full lg:w-1/2">
                                 <label className="text-[#006837] font-bold text-xl">Skill <span className="text-red-500 font-bold">*</span></label>
                                 <select name="skill"
                                     {...register("skill", { required: "Skill field is required." })}
@@ -196,8 +196,8 @@ const BdFormOne = ({ page, userId }) => {
                         </div>
 
                         {/* Profession and Current Institute/Workplace */}
-                        <div className="flex gap-6 mb-5">
-                            <div className="w-1/2">
+                        <div className="flex flex-col md:flex-row gap-6 mb-5">
+                            <div className="w-full md:w-1/2">
                                 <label className="text-[#006837] font-bold text-xl">Profession <span className="text-red-500 font-bold">*</span></label>
                                 <input
                                     type="text"
@@ -215,8 +215,8 @@ const BdFormOne = ({ page, userId }) => {
                                 )}
                             </div>
 
-                            <div className="w-1/2">
-                                <label className="text-[#006837] font-bold text-xl">Current Institute/Workplace (If Any)</label>
+                            <div className="w-full md:w-1/2">
+                                <label className="text-[#006837] font-bold text-xl">Current Institute<span className="hidden lg:inline-block">/Workplace</span> (If Any)</label>
                                 <input
                                     type="text"
                                     name="institute"
@@ -228,8 +228,8 @@ const BdFormOne = ({ page, userId }) => {
                         </div>
 
                         {/* Educational Qualification and T-shirt Size */}
-                        <div className="flex gap-6 mb-5">
-                            <div className="w-1/2">
+                        <div className="flex flex-col md:flex-row gap-6 mb-5">
+                            <div className="w-full md:w-1/2">
                                 <label className="text-[#006837] font-bold text-xl">Educational Qualification <span className="text-red-500 font-bold">*</span></label>
                                 <input
                                     type="text"
@@ -247,7 +247,7 @@ const BdFormOne = ({ page, userId }) => {
                                 )}
                             </div>
 
-                            <div className="w-1/2">
+                            <div className="w-full md:w-1/2">
                                 <label className="text-[#006837] font-bold text-xl">T-shirt Size <span className="text-red-500 font-bold">*</span></label>
                                 <select
                                     name="tshirtSize"
@@ -272,8 +272,8 @@ const BdFormOne = ({ page, userId }) => {
                         </div>
 
                         {/* Phone Number and Email Address */}
-                        <div className="flex gap-6 mb-5">
-                            <div className="w-1/2">
+                        <div className="flex flex-col md:flex-row gap-6 mb-5">
+                            <div className="w-full md:w-1/2">
                                 <label className="text-[#006837] font-bold text-xl">Phone Number <span className="text-red-500 font-bold">*</span></label>
                                 <input
                                     type="tel"
@@ -290,7 +290,7 @@ const BdFormOne = ({ page, userId }) => {
                                     </span>
                                 )}
                             </div>
-                            <div className="w-1/2">
+                            <div className="w-full md:w-1/2">
                                 <label className="text-[#006837] font-bold text-xl">E-mail Adress <span className="text-red-500 font-bold">*</span></label>
                                 <input
                                     type="email"
@@ -313,8 +313,8 @@ const BdFormOne = ({ page, userId }) => {
                         <div className="my-10 ">
                             <label className="flex justify-center  underline underline-offset-4 text-3xl font-bold text-[#006837]">Present Adress <span className="text-red-500 font-bold">*</span></label>
 
-                            <div className="flex gap-6 mt-8">
-                                <div className="w-1/2 flex gap-4">
+                            <div className="flex flex-col md:flex-row gap-6 mt-8">
+                                <div className="w-full md:w-1/2 flex gap-4">
                                     <div className="w-1/2">
                                         <label className="text-[#006837] font-bold text-xl">Division <span className="text-red-500 font-bold">*</span></label>
                                         <select
@@ -357,7 +357,7 @@ const BdFormOne = ({ page, userId }) => {
                                     </div>
                                 </div>
 
-                                <div className="w-1/2 flex gap-4">
+                                <div className="w-full md:w-1/2 flex gap-4">
                                     <div className="w-1/2">
                                         <label className="text-[#006837] font-bold text-xl">Upazila <span className="text-red-500 font-bold">*</span></label>
                                         <input
@@ -401,8 +401,8 @@ const BdFormOne = ({ page, userId }) => {
                         <div className="my-10 ">
                             <label className="flex justify-center  underline underline-offset-4 text-3xl font-bold text-[#006837]">Permanent Adress <span className="text-red-500 font-bold">*</span></label>
 
-                            <div className="flex gap-6 mt-8">
-                                <div className="w-1/2 flex gap-4">
+                            <div className="flex flex-col md:flex-row gap-6 mt-8">
+                                <div className="w-full md:w-1/2 flex gap-4">
                                     <div className="w-1/2">
                                         <label className="text-[#006837] font-bold text-xl">Division <span className="text-red-500 font-bold">*</span></label>
                                         <select
@@ -445,7 +445,7 @@ const BdFormOne = ({ page, userId }) => {
                                     </div>
                                 </div>
 
-                                <div className="w-1/2 flex gap-4">
+                                <div className="w-full md:w-1/2 flex gap-4">
                                     <div className="w-1/2">
                                         <label className="text-[#006837] font-bold text-xl">Upazila <span className="text-red-500 font-bold">*</span></label>
                                         <input

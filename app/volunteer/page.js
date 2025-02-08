@@ -11,8 +11,8 @@ const VolunteerPage = ({ searchParams: { query, page, stored } }) => {
                 style={{ backgroundImage: `url(/banner1.png)` }}
             >
                 <div className="absolute inset-0 flex flex-col justify-center items-center font-bold top-0 bg-[#006837] bg-opacity-35 h-[450px] text-white">
-                    <h1 className="uppercase text-5xl mb-3">Volunteer Registration</h1>
-                    <p className="text-lg">Be a friend and reach out for a smile on another friend&apos;s face.</p>
+                    <h1 className="uppercase text-4xl md:text-5xl text-center mb-3">Volunteer Registration</h1>
+                    <p className="text-lg text-center ">Be a friend and reach out for a smile on another friend&apos;s face.</p>
                 </div>
             </div >
 
@@ -20,7 +20,7 @@ const VolunteerPage = ({ searchParams: { query, page, stored } }) => {
                 <div className="flex gap-3 items-center">
                     <p className="h-10 w-full bg-[#006837]"></p>
                     <div>
-                        <h2 className="w-[320px] mb-3 h-10 text-5xl font-bold">BE A FRIEND</h2>
+                        <h2 className="w-[240px] md:w-[320px] mb-3 h-10 text-4xl md:text-5xl font-bold">BE A FRIEND</h2>
                     </div>
                     <p className="h-10 w-full bg-[#006837]"></p>
                 </div>

@@ -7,7 +7,7 @@ const BdForm = async ({ page }) => {
 
     return (
         <div className="bg-[#e9f5f0] min-h-screen">
-            <h1 className="pb-16 text-4xl font-bold text-[#c1272d] text-center">
+            <h1 className="pb-16 text-2xl md:text-4xl font-bold text-[#c1272d] text-center">
                 ( This form must be duly filled )
             </h1>
 
