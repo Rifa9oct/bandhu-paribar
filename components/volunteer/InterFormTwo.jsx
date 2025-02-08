@@ -220,7 +220,7 @@ const InterFormTwo = ({ setUserData, userData, userId }) => {
 
             {/* emergency contact  */}
             <div className="mb-5">
-                <label className="flex justify-center text-3xl font-bold text-[#006837]">
+                <label className="flex justify-start md:justify-center text-xl md:text-3xl font-bold text-[#006837]">
                     Emergency Contact Persone Name <span className="text-red-500 font-bold">*</span>
                 </label>
                 <input
@@ -242,8 +242,8 @@ const InterFormTwo = ({ setUserData, userData, userId }) => {
             </div>
 
             {/* Relationship */}
-            <div className="flex gap-6 mb-5">
-                <div className="w-1/2">
+            <div className="flex flex-col lg:flex-row gap-6 mb-5">
+                <div className="w-full md:w-1/2">
                     <label className="text-[#006837] font-bold text-xl">
                         Relationship With Your <span className="text-red-500 font-bold">*</span>
                     </label>
@@ -265,7 +265,7 @@ const InterFormTwo = ({ setUserData, userData, userId }) => {
                     )}
                 </div>
 
-                <div className="w-1/2">
+                <div className="w-full md:w-1/2">
                     <label className="text-[#006837] font-bold text-xl">
                         Contact Person Phone Number <span className="text-red-500 font-bold">*</span>
                     </label>
@@ -307,7 +307,7 @@ const InterFormTwo = ({ setUserData, userData, userId }) => {
                 <label className="text-[#006837] font-bold text-xl">
                     You are available for Volunteerism at <span className="text-red-500">*</span>
                 </label>
-                <div className="grid grid-cols-4 gap-4 mt-4">
+                <div className="grid grid-cols-3 md:grid-cols-4 gap-4 mt-4">
                     {["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((day) => (
                         <div key={day}>
                             <label className="flex items-center text-lg space-x-2 text-black">
@@ -332,7 +332,7 @@ const InterFormTwo = ({ setUserData, userData, userId }) => {
                 <label className="text-[#006837] font-bold underline underline-offset-4 text-2xl block text-center">
                     Attached File <span className="text-red-500">*</span>
                 </label>
-                <div className="grid grid-cols-3 gap-6 mt-6 text-[#006837]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 text-[#006837]">
                     {/* Picture */}
                     <div className="flex flex-col">
                         <label className="font-bold text-xl">Your Picture</label>
@@ -388,7 +388,7 @@ const InterFormTwo = ({ setUserData, userData, userId }) => {
                         {...register("declaration", { required: "You must agree to the declaration." })}
                         className="accent-[#39b54a]"
                     />
-                    <label className="text-[#006837] font-bold text-2xl">
+                    <label className="text-[#006837] font-bold text-lg md:text-xl lg:text-2xl">
                         I do hereby declare that the information furnished above is true.
                     </label>
                 </div>

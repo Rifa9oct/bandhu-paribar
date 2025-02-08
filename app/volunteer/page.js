@@ -41,18 +41,18 @@ const VolunteerPage = ({ searchParams: { query, page, stored } }) => {
                             </div>
                         </div>
 
-                        <div className="bg-[#e9f5f0]">
-                            <Image src="/thank-you.png" width={400} height={400} alt="thank you" className="mx-auto"/>
+                        <div className="bg-[#e9f5f0] flex justify-center">
+                            <Image src="/thank-you.png" width={400} height={400} alt="thank you" className="w-[300px] md:w-[400px]"/>
                         </div>
 
 
                         <div className="py-[120px] bg-[#e9f5f0] text-center text-[#006837]">
                             <div className="flex gap-3">
-                                <p className="h-8 w-full bg-[#006837]"></p>
+                                <p className="h-8 w-1/2 lg:w-full bg-[#006837]"></p>
                                 <div>
-                                    <h3 className="w-[680px] text-3xl font-bold">I sent you a smile. Please check your email now.</h3>
+                                    <h3 className="lg:w-[680px] text-2xl lg:text-3xl font-bold">I sent you a smile. Please check your email now.</h3>
                                 </div>
-                                <p className="h-8 w-full bg-[#006837]"></p>
+                                <p className="h-8 w-1/2 lg:w-full bg-[#006837]"></p>
                             </div>
                         </div>
                     </div>
