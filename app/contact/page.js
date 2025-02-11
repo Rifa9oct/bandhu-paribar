@@ -1,3 +1,7 @@
+export const metadata = {
+    title: "Bandhu Paribar | Contact page",
+    description: "Contact page description",
+};
 
 const ContactPage = () => {
     return (

@@ -3,6 +3,11 @@ import Button from "@/components/volunteer/Button";
 import InterForm from "@/components/volunteer/InterForm";
 import Image from "next/image";
 
+export const metadata = {
+    title: "Bandhu Paribar | Volunteer page",
+    description: "Volunteer page description",
+};
+
 const VolunteerPage = ({ searchParams: { query, page, stored } }) => {
 
     return (

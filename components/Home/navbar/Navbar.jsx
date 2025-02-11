@@ -16,9 +16,9 @@ const Navbar = async () => {
     return (
         <div className="lg:px-[210px] px-8 flex justify-between relative bg-[#006837] text-white">
             <div className="relative">
-                <div className="absolute top-0 z-10 flex items-center justify-center w-[110px] h-[110px] md:w-[130px] md:h-[120px] rounded-b-[20px] bg-white border-2 border-t-0 border-[#009445]">
+                <Link href="/" className="absolute top-0 z-10 flex items-center justify-center w-[110px] h-[110px] md:w-[130px] md:h-[120px] rounded-b-[20px] bg-white border-2 border-t-0 border-[#009445]">
                     <Image src="/logo.png" width={100} height={100} alt="logo" />
-                </div>
+                </Link>
             </div>
 
             <div className="hidden lg:flex gap-4 items-center font-medium py-5">

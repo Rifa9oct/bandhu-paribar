@@ -4,6 +4,11 @@ import Countup from "@/components/Home/Countup";
 import Initiatives from "@/components/Home/Initiatives";
 import JoinUs from "@/components/Home/JoinUs";
 
+export const metadata = {
+  title: "Bandhu Paribar | Home page",
+  description: "Home page description",
+};
+
 const HomePage = () => {
  
   return (
