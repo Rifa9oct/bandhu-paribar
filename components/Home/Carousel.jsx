@@ -40,7 +40,7 @@ const Carousel = () => {
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="absolute inset-0 pt-[145px] md:pt-[100px] lg:pt-0 bg-[#006837] bg-opacity-35 flex flex-col lg:justify-center lg:items-start pl-8 lg:pl-[210px] text-center text-white">
-                <h2 className="text-5xl font-bold font-serif">Join to become a Friend</h2>
+                <h1 className="text-5xl font-bold font-serif">Join to become a Friend</h1>
                 <p className="text-lg mt-4">Be a friend and reach out for a smile on another friend&apos;s face.</p>
 
                 <Link href="#">

@@ -75,7 +75,6 @@ const VolunteerPage = ({ searchParams: { query, page, stored } }) => {
                     </>
                 )
             }
-
         </div >
 
     );

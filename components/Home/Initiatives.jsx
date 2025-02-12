@@ -8,7 +8,7 @@ const Initiatives = () => {
         >
             <div className="absolute flex flex-col pt-[60px] top-0 items-center h-[620px] w-full bg-[#006837] bg-opacity-50">
                 <div data-aos="fade-down" data-aos-duration="1000" className="flex flex-col justify-center items-center text-white pb-[70px] md:py-[70px]">
-                    <h1 className="text-4xl md:ext-5xl font-bold uppercase">Our Initiatives</h1>
+                    <h2 className="text-4xl md:ext-5xl font-bold uppercase">Our Initiatives</h2>
                     <p className="w-[100px] bg-white py-[3px] mt-2"></p>
                 </div>
 

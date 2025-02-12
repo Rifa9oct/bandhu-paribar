@@ -12,7 +12,7 @@ const About = () => {
                     <Image src="/about.jpg" width={520} height={520} alt="about banner" className="border-[4px] border-white rounded-2xl" />
                 </div>
                 <div className="text-sm w-[350px]">
-                    <h2 data-aos="fade-down" data-aos-duration="1000" className="text-2xl font-bold">About Bondhu Poribar</h2>
+                    <h2 data-aos="fade-down" data-aos-duration="1000" className="text-3xl font-bold">About Bondhu Poribar</h2>
 
                     <li data-aos="fade-up" data-aos-duration="1000" className="mt-6 mb-4">Our mission is to empower the youth of Bangladeshthrough volunteerism, fostering self-resilience for ameaningful future.</li>
 

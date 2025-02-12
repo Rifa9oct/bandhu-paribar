@@ -7,9 +7,9 @@ const BdForm = async ({ page }) => {
 
     return (
         <div className="bg-[#e9f5f0] min-h-screen">
-            <h1 className="pb-16 text-2xl md:text-4xl font-bold text-[#c1272d] text-center">
+            <h3 className="pb-16 text-2xl md:text-4xl font-bold text-[#c1272d] text-center">
                 ( This form must be duly filled )
-            </h1>
+            </h3>
 
             <div className="max-w-[1100px] mx-auto pb-[120px] p-8">
                 <BdFormOne
